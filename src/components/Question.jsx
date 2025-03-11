@@ -5,7 +5,7 @@ function Question({ question }) {
     return (
         <>
             <div className="question-container">
-                <span className="question-question">{question}</span>
+                <h1 className="question-question">{question}</h1>
             </div>
         </>
     )

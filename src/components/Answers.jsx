@@ -1,13 +1,13 @@
 import '../styles/Answers.css'
+import Answer from "./Answer.jsx";
 
-function Answers({ answers }) {
+function Answers({ answers, onClickAnswers }) {
 
     return (
         <>
             <div className="answers-container">
                 {answers.map(answer => (
-                    <div key={answer.id} correct={answer.correct.toString()} className="answers-answer">{answer.text}</div>
-
+                    <Answer onClickAnswer={onClickAnswers} key={answer.id} answer={answer} className="answers-answer"></Answer>
                 ))}
             </div>
         </>
