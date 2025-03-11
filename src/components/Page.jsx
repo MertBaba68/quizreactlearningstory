@@ -27,10 +27,6 @@ function Page() {
         setQuiz(newQuiz);
     }
 
-    if (!quiz) {
-        return <p>Loading...</p>;
-    }
-
     return (
         <>
             <div className="page-container">

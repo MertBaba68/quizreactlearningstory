@@ -5,4 +5,22 @@
     width: 60%;
     align-items: center;
     justify-content: center;
+    grid-gap: 20px;
+    color: white;
+}
+
+.answer-container:nth-child(1) {
+    background-color: #f68461;
+}
+
+.answer-container:nth-child(2) {
+    background-color: #65df67;
+}
+
+.answer-container:nth-child(3) {
+    background-color: #61aaed;
+}
+
+.answer-container:nth-child(4) {
+    background-color: #a648b5;
 }
