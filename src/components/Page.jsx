@@ -6,21 +6,29 @@ import {getRandomQuiz} from "../utils/DummyDataService.jsx";
 
 function Page() {
     const[quiz, setQuiz] = useState("");
+    const[prevQuiz, setPrevQuiz] = useState("");
 
     useEffect(() => {
-        setQuiz(
-            getRandomQuiz()
-        );
-        console.log(quiz);
+        setQuiz(getRandomQuiz())
     }, []);
 
     const handleAnswer = (answer) => {
-        console.log(answer);
-        if (answer === true) {
-            setQuiz(
-                getRandomQuiz()
-            );
+        if (answer === true) createNewQuiz(prevQuiz);
+    }
+
+    const createNewQuiz = () => {
+        let newQuiz = getRandomQuiz()
+
+        while (newQuiz === prevQuiz) {
+            newQuiz = getRandomQuiz();
         }
+
+        setPrevQuiz(quiz);
+        setQuiz(newQuiz);
+    }
+
+    if (!quiz) {
+        return <p>Loading...</p>;
     }
 
     return (
