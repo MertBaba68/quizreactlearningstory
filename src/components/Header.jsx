@@ -6,7 +6,7 @@ function Header({ question }) {
     return (
         <>
             <div className="header-container">
-                {/*<span className="header-logo" >Quizz</span>*/}
+                <span className="header-logo" >Quizz</span>
                 <Question question={question} />
             </div>
         </>
