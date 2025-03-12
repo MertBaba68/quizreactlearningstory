@@ -9,7 +9,11 @@
 
 .answer-container:hover {
     background-color: #4B0082;
-    animation: shake 0.3s ease-in-out;
+}
+
+.answer-container.shake {
+    animation: shake 0.75s ease-in-out;
+    background-color: red;
 }
 
 .answer-text {
