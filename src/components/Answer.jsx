@@ -5,7 +5,7 @@ const Answer = ({ answer, onClickAnswer }) => {
     const[isShaking, setIsShaking] = useState(false);
 
     const handleClick = () => {
-        if (!answer.correct) {
+        if (!answer.correct && !isShaking) {
             setIsShaking(true);
             setTimeout(() => setIsShaking(false), 750);
         }

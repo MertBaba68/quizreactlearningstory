@@ -7,13 +7,19 @@ import {getRandomQuiz} from "../utils/DummyDataService.jsx";
 function Page() {
     const[quiz, setQuiz] = useState("");
     const[prevQuiz, setPrevQuiz] = useState("");
+    const[score, setScore] = useState(0);
+    const[amountOfQuestions, setAmountOfQuestions] = useState(0);
 
     useEffect(() => {
         setQuiz(getRandomQuiz())
     }, []);
 
     const handleAnswer = (answer) => {
-        if (answer === true) createNewQuiz(prevQuiz);
+        if (answer === true) {
+            setScore(score+1)
+        }
+
+        createNewQuiz(prevQuiz);
     }
 
     const createNewQuiz = () => {
@@ -25,11 +31,13 @@ function Page() {
 
         setPrevQuiz(quiz);
         setQuiz(newQuiz);
+        setAmountOfQuestions(amountOfQuestions+1);
     }
 
     return (
         <>
             <div className="page-container">
+                <span>{score}/{amountOfQuestions}</span>
                 {quiz ? (
                     <>
                         <Header question={quiz.question} />
