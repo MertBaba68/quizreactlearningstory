@@ -1,11 +1,11 @@
 import Header from "./Header.jsx";
 import Answers from "./Answers.jsx";
-import "../styles/Page.css"
+import "../styles/Quiz.css"
 import {useEffect, useState} from "react";
 import {getRandomQuiz} from "../utils/DummyDataService.jsx";
 import Result from "./Result.jsx";
 
-function Page() {
+function Quiz() {
     const[quiz, setQuiz] = useState("");
     const[prevQuiz, setPrevQuiz] = useState("");
     const[score, setScore] = useState(0);
@@ -52,4 +52,4 @@ function Page() {
     )
 }
 
-export default Page
+export default Quiz
