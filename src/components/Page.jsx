@@ -3,6 +3,7 @@ import Answers from "./Answers.jsx";
 import "../styles/Page.css"
 import {useEffect, useState} from "react";
 import {getRandomQuiz} from "../utils/DummyDataService.jsx";
+import Result from "./Result.jsx";
 
 function Page() {
     const[quiz, setQuiz] = useState("");
@@ -37,7 +38,7 @@ function Page() {
     return (
         <>
             <div className="page-container">
-                <span>{score}/{amountOfQuestions}</span>
+                <Result score={score} amountOfQuestions={amountOfQuestions} />
                 {quiz ? (
                     <>
                         <Header question={quiz.question} />
